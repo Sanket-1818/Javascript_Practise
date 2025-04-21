@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        
+        }
+        #btn{
+            text-align: center;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            background-color: rgb(252, 194, 118);
+            cursor: pointer;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click_Me</button>
+    <script>
+        let btn=document.querySelector("#btn");
+        btn.addEventListener("click",()=>{
+            if(btn.innerHTML=="Click_Me"){
+                btn.style.backgroundColor="rgb(252,118,118)";
+                document.body.style.backgroundColor="rgb(118, 252, 118)";
+                btn.innerHTML="Go_Back";
+            }
+            else{
+                btn.style.backgroundColor="rgb(252, 194, 118)";
+                document.body.style.backgroundColor="#f0f0f0";
+                btn.innerHTML="Click_Me";
+            }
+        })
+    </script>
+</body>
+</html>
