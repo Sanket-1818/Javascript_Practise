@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript BoM</h1>
+    <button onclick="openwind()">Click</button>
+    <button onclick="close()">Close</button>
+    <script>
+///Getting hieght and width of the browser/////
+        let inner=window.innerHeight
+        console.log("Inner Height",inner)
+        let outer=window.outerHeight
+        console.log("outer Height",outer)
+        let innerw=window.innerWidth
+        console.log("Inner Width",innerw)
+        let outerw=window.outerWidth
+        console.log("outer Width",outerw)
+
+////////////////////////////////////////////////////////////////////
+
+///Opening and Closing Window///////
+        function openwind(){
+            window.open("","_blank","width=500px,height=400px");
+        }
+
+        function close(){
+            window.close()
+        }
+//////////////////////////////////////
+
+
+    </script>
+</body>
+</html>
