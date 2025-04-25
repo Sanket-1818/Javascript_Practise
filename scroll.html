@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollTo and ScrollBy Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .container {
+            margin-bottom: 50px;
+        }
+        .scroll-box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid #333;
+            overflow: auto;
+            margin: 20px auto;
+            padding: 10px;
+            position: relative;
+        }
+        .horizontal-content {
+            width: 800px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+        }
+        .vertical-content {
+            height: 800px;
+        }
+        .color-block {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .position-box {
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin: 10px auto;
+            width: 300px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ScrollTo and ScrollBy Examples</h1>
+
+    <!-- X-Axis (Horizontal) Scrolling -->
+    <div class="container">
+        <h2>Horizontal Scrolling (X-Axis)</h2>
+        <div class="scroll-box" id="horizontal-box">
+            <div class="horizontal-content">
+                <div class="color-block" style="background-color: #FF5252;">Block 1</div>
+                <div class="color-block" style="background-color: #FF9800;">Block 2</div>
+                <div class="color-block" style="background-color: #4CAF50;">Block 3</div>
+                <div class="color-block" style="background-color: #2196F3;">Block 4</div>
+                <div class="color-block" style="background-color: #9C27B0;">Block 5</div>
+            </div>
+        </div>
+        <div class="position-box" id="x-position">Scroll Position: X = 0px</div>
+        <div class="button-group">
+            <button onclick="scrollToX(0)">ScrollTo Start</button>
+            <button onclick="scrollToX(200)">ScrollTo 200px</button>
+            <button onclick="scrollToX(400)">ScrollTo 400px</button>
+            <button onclick="scrollByX(100)">ScrollBy +100px</button>
+            <button onclick="scrollByX(-100)">ScrollBy -100px</button>
+        </div>
+    </div>
+
+    <!-- Y-Axis (Vertical) Scrolling -->
+    <div class="container">
+        <h2>Vertical Scrolling (Y-Axis)</h2>
+        <div class="scroll-box" id="vertical-box">
+            <div class="vertical-content">
+                <h3>Scroll down to see more content</h3>
+                <p>This is the top section</p>
+                <div style="height: 150px; background-color: #FF5252; margin: 20px 0; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Section 1 (150px down)</div>
+                <div style="height: 150px; background-color: #FF9800; margin: 20px 0; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Section 2 (300px down)</div>
+                <div style="height: 150px; background-color: #4CAF50; margin: 20px 0; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Section 3 (450px down)</div>
+                <div style="height: 150px; background-color: #2196F3; margin: 20px 0; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Section 4 (600px down)</div>
+            </div>
+        </div>
+        <div class="position-box" id="y-position">Scroll Position: Y = 0px</div>
+        <div class="button-group">
+            <button onclick="scrollToY(0)">ScrollTo Top</button>
+            <button onclick="scrollToY(150)">ScrollTo 150px</button>
+            <button onclick="scrollToY(300)">ScrollTo 300px</button>
+            <button onclick="scrollByY(100)">ScrollBy +100px</button>
+            <button onclick="scrollByY(-100)">ScrollBy -100px</button>
+        </div>
+    </div>
+
+    <script>
+        // Get references to the scroll boxes
+        const horizontalBox = document.getElementById('horizontal-box');
+        const verticalBox = document.getElementById('vertical-box');
+        const xPositionDisplay = document.getElementById('x-position');
+        const yPositionDisplay = document.getElementById('y-position');
+
+        // X-Axis scrollTo and scrollBy functions
+        function scrollToX(position) {
+            horizontalBox.scrollTo({
+                left: position,
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollByX(amount) {
+            horizontalBox.scrollBy({
+                left: amount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Y-Axis scrollTo and scrollBy functions
+        function scrollToY(position) {
+            verticalBox.scrollTo({
+                top: position,
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollByY(amount) {
+            verticalBox.scrollBy({
+                top: amount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Update position displays when scrolling
+        horizontalBox.addEventListener('scroll', function() {
+            xPositionDisplay.textContent = `Scroll Position: X = ${horizontalBox.scrollLeft}px`;
+        });
+
+        verticalBox.addEventListener('scroll', function() {
+            yPositionDisplay.textContent = `Scroll Position: Y = ${verticalBox.scrollTop}px`;
+        });
+    </script>
+</body>
+</html>
