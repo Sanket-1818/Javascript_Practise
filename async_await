@@ -1,0 +1,28 @@
+async function test() {
+    console.log("2: Message")
+    await console.log("3: Message") //Await fun is added it will manke wait for some time next statment
+    console.log("4: Message")
+}
+
+console.log("1: Message")
+test()
+console.log("5: Message")
+
+///////////////////////////////////////Using Fetchh////////////////////////////////////////////////
+
+
+async function test() {
+    const response=await fetch("json/student_data.json")
+    console.log("3. Message")
+    const student=await response.json();
+    console.log("2: Message")
+
+    return student
+}
+
+console.log("1: Message")
+test().then((res)=>{
+    console.log("res")
+}).catch((res)=>{
+    console.log("res")
+});
