@@ -8,7 +8,7 @@ console.log("1: Message")
 test()
 console.log("5: Message")
 
-///////////////////////////////////////Using Fetchh////////////////////////////////////////////////
+//Using Fetchh//
 
 
 async function test() {
