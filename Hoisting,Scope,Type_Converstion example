@@ -1,0 +1,30 @@
+// hoisting is process that brings variable top of the function
+greet()
+function greet(){
+    console.log("Hello")
+}
+
+// Type Converstion
+
+let e=true
+console.log(e)
+let f=String(e)
+console.log(f)      //Boolean to string
+console.log(typeof(f))
+
+//-------------------------------------------------
+
+let a='123'
+console.log(a)
+let c=Number(a)
+console.log(c)      //String converted to Number  
+console.log(typeof(c))
+
+//-------------------------------------------------
+
+let b=123
+console.log(b)
+console.log(typeof(b))
+let d=String(b)
+console.log(d)
+console.log(typeof(d))
