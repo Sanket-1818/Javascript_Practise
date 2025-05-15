@@ -17,3 +17,15 @@ const people=[
 ];
 const greater=people.filter(name=>name.age>=18);
 console.log(greater);
+
+//reduce
+
+const cart=[
+    {item:"Laptop",price:999.99},
+    {item:"Mouse",price:29.99},
+    {item:"Keyboard",price:119.99},
+    {item:"USB",price:9.99}
+];
+const totalPrice = cart.reduce((sum,product)=>sum+product.price);
+const averagePrice = totalPrice / cart.length;
+console.log(averagePrice)
