@@ -1,0 +1,19 @@
+// Map=Transforms each item in an array and returns a new array with the same length.
+// Filter=Filters items based on a condition and returns a new array with only the matching elements.
+// reduce=Reduces an array to a single value by accumulating results.
+
+//Map 
+const celsius=[0,15,30,45,100];
+const fahrenheit=celsius.map(c=>(c*9/5)+32);
+console.log(fahrenheit);
+
+
+//Filter
+const people=[
+    {name:"John",age:15},
+    {name:"Jane",age:22},
+    {name:"Mike",age:17},
+    {name:"Sara",age:19}
+];
+const greater=people.filter(name=>name.age>=18);
+console.log(greater);
