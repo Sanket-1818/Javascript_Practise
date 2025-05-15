@@ -28,3 +28,37 @@ console.log(typeof(b))
 let d=String(b)
 console.log(d)
 console.log(typeof(d))
+
+
+//--------------------------------------------------
+
+//Global scope
+
+let v=100
+
+function fun(){
+    console.log(v)
+}
+
+fun()
+
+//---------------------------------------------------
+
+//Function Scope
+
+function fun1(){
+    let b=101
+    console.log(b)
+}
+fun1()
+console.log(b)
+
+//---------------------------------
+
+//block Scope
+
+{
+    let c = 102;
+    console.log(c); // Accessible inside the block
+}
+console.log(c); 
